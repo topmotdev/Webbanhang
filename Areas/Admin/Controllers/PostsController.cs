@@ -91,7 +91,7 @@ namespace WebApplication1.Areas.Admin.Controllers
             _dbcontext.Entry(item).State = EntityState.Modified;
             item.CreatedDate = DateTime.Now;
             item.ModifiedrDate = DateTime.Now;
-            _dbcontext.Posts.Add(item);
+            _dbcontext.SaveChanges();
             return RedirectToAction("Index");
         }
         [HttpPost]

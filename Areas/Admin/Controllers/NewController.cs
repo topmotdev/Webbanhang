@@ -88,10 +88,10 @@ namespace WebApplication1.Areas.Admin.Controllers
             {
                 return View("Error");
             }
-            _dbcontext.Entry(item).State = EntityState.Modified;
+
             item.CreatedDate = DateTime.Now;
             item.ModifiedrDate = DateTime.Now;
-            _dbcontext.News.Add(item);
+            _dbcontext.Entry(item).State = EntityState.Modified;
             return RedirectToAction("Index");
         }
         [HttpPost]

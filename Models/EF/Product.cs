@@ -12,8 +12,9 @@ namespace WebApplication1.Models.EF
         public string? ProductCode { get; set; }
         public string? Title { get; set; }
         public string? Alias { get; set; }
+        [ForeignKey("ProductCategory")]
         public int ProductCategoryID { get; set; }      
-        public string? Description { get; set; }
+        public string? Description { get; set; }    
         public string? Detail { get; set; }
         public string? Image { get; set; }
         public decimal Price { get; set; }
@@ -21,6 +22,7 @@ namespace WebApplication1.Models.EF
         public decimal PriceSale { get; set; }
         public int Quantity { get; set; }
         public bool IsHome { get; set; }
+        public bool IsActive { get; set; }
         public bool IsSale { get; set; }
         public bool IsFeature { get; set; }
         public bool IsHot { get; set; }

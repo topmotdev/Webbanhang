@@ -1,0 +1,9 @@
+﻿@model List<WebApplication1.Models.EF.Category>
+@foreach(var item in Model)
+    {
+    <li>
+        
+        <a href="product.html">@Html.Raw(item.Title)</a>
+    </li>
+    }
+

@@ -103,6 +103,7 @@
                                 <td>@item.Title</td>
                                 <td>@Html.Raw(item.CreatedDate?.ToString("dd/MM/yyyy"))</td>
                                 <td>@Html.Raw(item.Detail)</td>
+                                <td>@Html.Raw(item.Image)</td>
                                 <td>
                                     <a href="/admin/new/edit/@item.Id" class="btn btn-primary">sửa</a>
                                     <a href="#" class="btn btn-danger btnDelete" data-id="@item.Id">xóa</a>

@@ -362,6 +362,9 @@ namespace WebApplication1.Migrations
                     b.Property<string>("Image")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsFeature")
                         .HasColumnType("bit");
 

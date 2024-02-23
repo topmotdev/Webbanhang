@@ -21,6 +21,30 @@
       "PackagePath": "staticwebassets\\Image\\image.jpeg"
     },
     {
+      "Id": "E:\\WebApplication1\\wwwroot\\Image\\product-01.jpg",
+      "PackagePath": "staticwebassets\\Image\\product-01.jpg"
+    },
+    {
+      "Id": "E:\\WebApplication1\\wwwroot\\Image\\product-02.jpg",
+      "PackagePath": "staticwebassets\\Image\\product-02.jpg"
+    },
+    {
+      "Id": "E:\\WebApplication1\\wwwroot\\Image\\product-03.jpg",
+      "PackagePath": "staticwebassets\\Image\\product-03.jpg"
+    },
+    {
+      "Id": "E:\\WebApplication1\\wwwroot\\Image\\product-04.jpg",
+      "PackagePath": "staticwebassets\\Image\\product-04.jpg"
+    },
+    {
+      "Id": "E:\\WebApplication1\\wwwroot\\Image\\product-06.jpg",
+      "PackagePath": "staticwebassets\\Image\\product-06.jpg"
+    },
+    {
+      "Id": "E:\\WebApplication1\\wwwroot\\Image\\product-07.jpg",
+      "PackagePath": "staticwebassets\\Image\\product-07.jpg"
+    },
+    {
       "Id": "E:\\WebApplication1\\wwwroot\\ckeditor5-build-classic\\LICENSE.md",
       "PackagePath": "staticwebassets\\ckeditor5-build-classic\\LICENSE.md"
     },

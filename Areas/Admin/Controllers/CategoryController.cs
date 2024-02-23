@@ -23,7 +23,7 @@ namespace WebApplication1.Areas.Admin.Controllers
         {
             int PageNumber = page ?? 1;
             int PageSize = 8;
-            IQueryable<Category> items = _dbcontext.Categories.OrderByDescending(x => x.Id);
+            IQueryable<Category> items = _dbcontext.Categories.OrderBy(x => x.Id);
             if (!string.IsNullOrEmpty(SearchText))
             {
                 items = items.Where(x => x.Title != null && x.Title.Contains(SearchText));

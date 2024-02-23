@@ -1,5 +1,6 @@
 ﻿@using X.PagedList.Mvc.Core;
 @model X.PagedList.IPagedList<WebApplication1.Models.EF.Product>
+
 @{
     ViewData["Title"] = "Tin tuc";
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
@@ -83,7 +84,8 @@
                         <th>STT</th>
                         <th>Tên danh mục</th>
                         <th>Ngày tạo</th>
-                        <th>ảnh đại diện</th>
+                        <th>Danh mục</th>
+                        <th>hình ảnh</th>
                         <th>Chi tiết</th>
                         <th></th>
                     </tr>
@@ -108,15 +110,16 @@
                                 <td><input type="checkbox" class="select" value="@item.Id" /></td>
                                 <td>@(stt + i)</td>
                                 <td>@item.Title</td>
-                                <td>@Html.Raw(item.CreatedDate?.ToString("dd/MM/yyyy"))</td>
-                                <td>@Html.Raw(item.Image)</td>
+                                <td >@Html.Raw(item.CreatedDate?.ToString("dd/MM/yyyy"))</td>
+                                <td>@item.ProductCategory?.Title</td>
+                                <td class ="row">@Html.Raw(item.Image)</td>
                                 <td>
                                     <div class="detail-container">
                                         @Html.Raw(item.Detail)
                                     </div>
                                 </td>
                                 <td>
-                                    <a href="/admin/posts/edit/@item.Id" class="btn btn-primary">sửa</a>
+                                    <a href="/admin/product/edit/@item.Id" class="btn btn-primary">sửa</a>
                                     <a href="#" class="btn btn-danger btnDelete" data-id="@item.Id">xóa</a>
 
                                 </td>
@@ -254,7 +257,7 @@
 
                 if (conf === true) {
                     $.ajax({
-                        url: 'https://localhost:7141/admin/posts/delete_selected',
+                        url: 'https://localhost:7141/admin/product/delete_selected',
                         type: 'POST',
                         data: { ids: ids },
                         success: function () {
@@ -276,14 +279,14 @@
             });
             $('body').on('click', '.btnDelete', function () {
                 var id = $(this).data("id");
-                var conf = confirm("bạn có muốn xóa bản ghi này không ?");
-                if (conf === true) {
+                var conf = confirm("Bạn có muốn xóa các bản ghi đã chọn không?");
+                if (conf) {
                     $.ajax({
-                        url: 'https://localhost:7141/admin/posts/delete',
+                        url: 'https://localhost:7141/admin/product/delete',
                         type: 'POST',
-                        data: { Id: id },
+                        data: {Id: id},
                         success: function () {
-                            alert("xóa thành công bản ghi: " + id);
+                            alert("Xóa thành công  bản ghi " + id);
                             $('#item_' + id).remove();
                         },
                         error: function (xhr, status, error) {
@@ -292,7 +295,7 @@
                         }
                     })
                 }
-            });
+            })
             $('body').on('change', "#selectAllToDel", function () {
                 var checkStatus = this.checked;
                 var checkbox = $(this).parents('.card-body').find('tr td input:checkbox');
